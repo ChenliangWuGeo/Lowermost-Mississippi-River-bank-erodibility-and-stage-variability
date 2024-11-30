@@ -1,6 +1,6 @@
 %combine sand and silt, and plot figure 3 a and d
 figure(3);hold on
-subplot(2,2,1);hold on
+subplot(3,2,1);hold on
 plot(RK_E/1e3,mud_Sub,marker(m),'markeredgecolor','w','markerfacecolor','k','MarkerSize',5);
 plot(RK_E/1e3,movmean(mud_Sub,[5,5],'omitnan'),'color','k','LineWidth',1.5);
 ylabel('percentage');
@@ -23,18 +23,19 @@ if m == 2
 end
 
 figure(3);hold on
-subplot(2,2,1);hold on
+subplot(3,2,1);hold on
 plot(RK_E/1e3,nonCohesive,'o','markeredgecolor','w','markerfacecolor',[.6 .6 .6],'MarkerSize',5);
 plot(RK_E/1e3,movmean(nonCohesive,[5,5],'omitnan'),'color',[.6 .6 .6],'LineWidth',1.5);
 
 %% plot E
 figure(3);hold on
-subplot(2,2,4);hold on
+subplot(3,2,4);hold on
 predE = movmean(E,10);
 x = RK_E'/1e3;
-h1 = plot(x,E,'hexagram','markeredgecolor','w','markerfacecolor','k','markersize',6);
-h2 = plot(RK_E'/1e3,predE,'k:','linewidth',1.5);  
-legend([h1,h2],{'bend \itE','move mean ({\itE})'},'location','best','box','off');
+h5 = plot(x,E,'hexagram','markeredgecolor','w','markerfacecolor','k','markersize',6);
+h6 = plot(RK_E'/1e3,predE,'k:','linewidth',1.5);  
+legend([h5,h6],{'bend \itE','move mean ({\itE})'},'location','best','box','off');
+
 % xlabel('river kilometer (RK)');
 ylabel('eronsion coefficient (\it{E})');
 xlabel('river kilometer (RK)');

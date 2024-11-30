@@ -94,7 +94,7 @@ N2=N*N;
 
 % Bivariant Gaussian kernel function
 kerf=@(t)exp(-sum(t.*t,2)/2)/(2*pi);
-% cdf estimation based on A. Genz, Statistics and Computing 14:251â€“260, 2004
+% cdf estimation based on A. Genz, Statistics and Computing 14:251–260, 2004
 ckerf=@(t)prod(erfc(-t ./ sqrt(2))/2,2);
 for k=1:N2
     h=min([min([X(k,:)-xmin;p.h]);min([xmax-X(k,:);p.h])]);
