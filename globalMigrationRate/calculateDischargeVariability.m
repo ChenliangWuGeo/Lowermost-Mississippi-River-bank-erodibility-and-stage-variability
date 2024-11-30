@@ -1,0 +1,80 @@
+load("Discharge.mat")%load all the discharge data.
+climateZone = readmatrix('result_compilation_Climate.xlsx','Sheet','sheet1','Range','I2:I65');
+climateZone(climateZone>=1 & climateZone<=3) = 1;
+climateZone(climateZone>=4 & climateZone<=7) = 2;
+climateZone(climateZone>=8 & climateZone<=16) = 3;
+climateZone(climateZone>=17 & climateZone<=28) = 4;
+climateZone(climateZone==29 | climateZone==30) = 5;
+climateZone(climateZone>=31)=5;
+
+
+discharge(1).data = mississippi.Discharge;
+discharge(2).data = trinity.Discharge;
+discharge(3).data = rhine.Discharge;
+discharge(4).data = meuse.Discharge;
+discharge(5).data = danube.Discharge;
+discharge(6).data = brazos.Discharge;
+discharge(7).data = riogrande.Discharge;
+discharge(8).data = colorado.Discharge;
+discharge(9).data = indus.Discharge;
+
+discharge(10).data = don.Discharge;
+discharge(11).data = kobuk.Discharge;
+discharge(12).data = yana.Discharge;
+discharge(13).data = mackenzie.Discharge;
+discharge(14).data = tombigbee.Discharge;
+discharge(15).data = apalachicola.Discharge;
+discharge(16).data = alabama.Discharge;
+discharge(17).data = sabine.Discharge;
+discharge(18).data = neches.Discharge;
+discharge(19).data = suwanee.Discharge;
+discharge(20).data = sacramento.Discharge;
+discharge(21).data = minnesota_up.Discharge;
+discharge(22).data = minnesota_down.Discharge;
+discharge(23).data = red.Discharge;
+discharge(24).data = wabash.Discharge;
+discharge(25).data = pearl.Discharge;
+discharge(26).data = okavango.Discharge;
+discharge(27).data = beatton.Discharge;
+discharge(28).data = beaver.Discharge;
+discharge(29).data = amazon.Discharge;
+discharge(30).data = riojutai.Discharge;
+discharge(31).data = kootenay.Discharge;
+discharge(32).data = trinity_postdam.Discharge;
+discharge(33).data = riogrande_postdam.Discharge;
+discharge(34).data = clearwater.Discharge;
+discharge(35).data = ob.Discharge;
+discharge(36).data = reddeer.Discharge;
+discharge(37).data = willamette.Discharge;
+discharge(38).data = driftwood.Discharge;
+discharge(39).data = white.Discharge;
+discharge(40).data = bellinger.Discharge;
+
+discharge(41).data = bogue_chitto.Discharge ;
+discharge(42).data = chinchaga.Discharge ;
+discharge(43).data = chickasawhay.Discharge;
+discharge(44).data = choctawhatchee.Discharge;
+discharge(45).data = escambia.Discharge;
+discharge(46).data = murghab.Discharge;
+discharge(47).data = rio_curuca.Discharge;
+discharge(48).data = rio_itui.Discharge;
+discharge(49).data = rio_xingu.Discharge;
+discharge(50).data = nishnabotna.Discharge;
+discharge(51).data = east_fork_white.Discharge;
+discharge(52).data = oldman.Discharge;
+discharge(53).data = pembina.Discharge;
+discharge(54).data = fort_nelson.Discharge;
+discharge(55).data = sikanni_chief.Discharge;
+discharge(56).data = swan.Discharge;
+discharge(57).data = rouge.Discharge;
+discharge(58).data = riopurus.Discharge;
+discharge(59).data = rioparana.Discharge;
+discharge(60).data = rioaraguaia.Discharge;
+discharge(61).data = milk.Discharge;
+discharge(62).data = whitewater.Discharge;
+discharge(63).data = ocmulgee.Discharge;
+discharge(64).data = brazos_upstream.Discharge;
+
+DV = nan(64,11);
+
+DV = calculateDV (DV,discharge);
